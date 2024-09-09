@@ -1,38 +1,12 @@
-
-// export default Login;
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import axios from 'axios';
-
+import Swal from 'sweetalert2';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const dispatch = useDispatch(); // Get the dispatch function from Redux
 
-  // const handleSubmit = async e => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await axios.post(
-  //       'https://hotel.aotrek.net/api/auth/login',
-  //       { email, password }
-  //     );
-
-  //     // Dispatch login action
-  //     dispatch({ type: 'LOGIN_SUCCESS', payload: response.data.token });
-
-  //     // Store token in localStorage
-  //     localStorage.setItem('token', response.data.token);
-
-  //     // Redirect to home page
-  //     navigate('/home');
-  //   } catch (error) {
-  //     console.error('Login failed:', error);
-  //     window.alert('Login failed. Please check your credentials.');
-  //   }
-  // };
-  // In your Login component
   const handleSubmit = async e => {
     e.preventDefault();
     try {
@@ -41,20 +15,21 @@ const Login = () => {
         { email, password }
       );
       console.log(response);
-        console.log(response.data.user.token);
+      console.log(response.data.user.token);
       localStorage.setItem('token', response.data.user.token);
       navigate('/home');
+      Swal.fire('Login Success!', 'Congretulations', );
     } catch (error) {
       console.error('Login failed:', error);
-      window.alert('Login failed. Please check your credentials.');
+      Swal.fire('Login Failed!', 'unauthorized person not allowed.', 'error');
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 ">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
+        className="bg-white p-8 rounded-lg shadow-xl w-full max-w-md"
       >
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
         <div className="mb-4">
@@ -93,5 +68,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
