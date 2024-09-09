@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -307,5 +305,3 @@ const ManageProducts = () => {
 };
 
 export default ManageProducts;
-
-

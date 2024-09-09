@@ -24,7 +24,7 @@ const Home = () => {
           onClick={handleManageProducts}
           className="bg-white text-blue-500 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition duration-300"
         >
-          Manage Products
+         Click to Manage Products
         </button>
       </section>
 
