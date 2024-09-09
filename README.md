@@ -1,8 +1,8 @@
 #Product Management App
-###Description
+##Description
 The Product Management App is a web-based application designed to streamline the process of creating, editing, and managing products in a catalog. This app provides a user-friendly interface where users can easily add new products, update existing ones, and maintain a structured product database. Built with React and Tailwind CSS, the app ensures responsive design and seamless user experience across all devices.
 
-###Key Features:
+##Key Features:
 Create New Products: Add products with details such as name, title, and description.
 Edit Existing Products: Update product information directly within the app.
 Responsive Design: Optimized layout for both desktop and mobile devices, ensuring ease of use across all platforms.
